@@ -13,28 +13,30 @@ Feel free to submit pull requests for those:
 
 ## Configuration
 
-    <configuration>
-        <configSections>
-           <section name="svnAutoCommitter" type="SvnAutoCommitter.Service.Config.SvnAutoCommitterConfigurationSection, SvnAutoCommitter.Service" />
-        </configSections>
-        <appSettings>
-          <add key="ServiceName" value="" />        <!-- Windows Service name (used during service installation only) -->
-          <add key="ServiceDisplayName" value="" /> <!-- Windows Service display name (used during service installation only) -->
-        </appSettings>
-     
-        <svnAutoCommitter basePath="" repositoryUrl="" repositoryUsername="" repositoryPassword="">
-          <!-- 
-              basePath            (optional) a path that will be used as a prefix to all folder paths
-              repositoryUrl       (required) an URL of the Subversion repository
-              repositoryUsername  (required) a user name that is used to commit the changes
-              repositoryPassword  (required) a password that is used to commit the changes
-          -->
-          <folders> <!-- List of folders to watch -->
-            <add path="" relativeUrl="" /> 
-            <!-- 
-                path        (required) a path to the folder (relative to the basePath or absolute if basePath is not set)
-                relativeUrl (optional) associated URL in Subversion, relative to repositoryUrl (uses path if not specified) 
-            -->
-          </folders>
-        </svnAutoCommitter> 
-    </configuration>
+```xml
+<configuration>
+    <configSections>
+       <section name="svnAutoCommitter" type="SvnAutoCommitter.Service.Config.SvnAutoCommitterConfigurationSection, SvnAutoCommitter.Service" />
+    </configSections>
+    <appSettings>
+      <add key="ServiceName" value="" />        <!-- Windows Service name (used during service installation only) -->
+      <add key="ServiceDisplayName" value="" /> <!-- Windows Service display name (used during service installation only) -->
+    </appSettings>
+ 
+    <svnAutoCommitter basePath="" repositoryUrl="" repositoryUsername="" repositoryPassword="">
+      <!-- 
+          basePath            (optional) a path that will be used as a prefix to all folder paths
+          repositoryUrl       (required) an URL of the Subversion repository
+          repositoryUsername  (required) a user name that is used to commit the changes
+          repositoryPassword  (required) a password that is used to commit the changes
+      -->
+      <folders> <!-- List of folders to watch -->
+        <add path="" relativeUrl="" /> 
+        <!-- 
+            path        (required) a path to the folder (relative to the basePath or absolute if basePath is not set)
+            relativeUrl (optional) associated URL in Subversion, relative to repositoryUrl (uses path if not specified) 
+        -->
+      </folders>
+    </svnAutoCommitter> 
+</configuration>
+```
